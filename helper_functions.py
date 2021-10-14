@@ -286,3 +286,16 @@ def calculate_results(y_true, y_pred):
                   "recall": model_recall,
                   "f1": model_f1}
   return model_results
+
+
+  # Create a data augmentation that run fast with the gpu
+  def data_augmentation_gpu():
+    data_augmentation = tf.keras.Sequential([
+  tf.keras.layers.experimental.preprocessing.RandomFlip("horizontal"),
+  tf.keras.layers.experimental.preprocessing.RandomRotation(0.2),
+  tf.keras.layers.experimental.preprocessing.RandomZoom(0.2),
+  tf.keras.layers.experimental.preprocessing.RandomHeight(0.2),
+  tf.keras.layers.experimental.preprocessing.RandomWidth(0.2),
+  tf.keras.layers.experimental.preprocessing.Rescaling(1./225),
+
+], name ="data_augmentation")
