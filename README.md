@@ -1,1 +1,1 @@
-# All Scripts in python, (Function Helpers)
+# All Scripts in python, (Helpers Functions)
